@@ -10,6 +10,7 @@ const SigninScreen =()=>{
 
   return (
     <View style={styles.container}>
+      
       <NavigationEvents onWillFocus={clearErrorMessage} />
       <AuthForm
         headerText="Sign In to Your Account"
@@ -18,22 +19,23 @@ const SigninScreen =()=>{
         submitButtonText="Sign In"
       />
       <NavLink
-        text="Dont have an account? Sign up instead"
+        text="Do not have an account? Sign up instead"
         routeName="Signup"
       />
     </View>
   );
 };
-
-SigninScreen.navigationOptions = {
-  header: () => false,
+SigninScreen.navigationOptions = () => {
+  return{
+      headerShown:false 
+  };
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    marginBottom: 250,
+    
   },
 });
 
